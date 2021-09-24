@@ -1,3 +1,59 @@
 * {
-  /**/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F29F05;
+}
+
+img {
+  /* border: 1px blue solid; */
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: #F2B705;
+}
+
+p {
+  text-align: center;
+  color: #fff;
+}
+
+.imageheader { /* this class is for the two title images on the home page */
+  /* border: 1px red solid; */
+  display: flex;
+  flex: flex;
+  justify-content: stretch
+}
+
+.mtd { /* this class is for the two title images on the home page */
+  background-color: #730606;
+}
+
+.dm-title { /* this class is for the DungeonManager title image */
+  max-width: 50%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+}
+
+.mtd-title { /* this class is for the Master the Dungeon title image */
+  max-width: 80%;
+  margin: 0 auto;
+  padding-top: 5%;
+  padding-bottom: 5%
+}
+
+.content { /* this class is for the content boxes on the home page */
+  display: flex;
+  flex-direction: column;
+  background-color: #A60808;
+  padding: 5%;
+  margin: 10%;
 }
