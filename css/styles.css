@@ -34,7 +34,8 @@ p {
 	color: #fff;
 }
 
-.button { /*generic button */
+.button {
+	/*generic button */
 	color: #FFF;
 	background-color: #9F6A59;
 	font-weight: bold;
@@ -51,9 +52,10 @@ p {
 .button:hover {
 	color: #FFF;
 	background-color: rgba(159, 106, 89, 0.9);
-  }
+}
 
-.headerContainer { /*generic header container */
+.headerContainer {
+	/*generic header container */
 	display: flex;
 	justify-content: center;
 	width: 100%;
@@ -143,7 +145,7 @@ p {
 	flex-direction: column;
 	align-items: center;
 	height: 20%;
-	width: 100;
+	/* width: 100; */
 	border: 2px solid white;
 }
 
@@ -204,7 +206,6 @@ p {
 }
 
 
-
 .reminderColumn {
 	display: flex;
 	justify-content: center;
@@ -225,59 +226,65 @@ p {
 /* SEARCH PAGE STYLES */
 
 .results-wrapper {
-  padding: 50px 50px 75px 75px;
+	padding: 50px 50px 75px 75px;
 }
 
 .results-wrapper h3 {
-  text-indent: 20px;
+	text-indent: 20px;
 }
 
-.results-wrapper h1, h2, h3, h4, h5, h6 {
-  margin: 0 auto;
-  margin-bottom: 10px;
-  color: #730606;
+.results-wrapper h1,
+.results-wrapper h2,
+.results-wrapper h3,
+.results-wrapper h4,
+.results-wrapper h5,
+.results-wrapper h6 {
+	margin: 0 auto;
+	margin-bottom: 10px;
+	color: #730606;
 }
 
 .results-wrapper p {
-  text-indent: 30px;
-  text-align: left;
-  color: #000;
-  font-weight: bolder;
+	text-indent: 30px;
+	text-align: left;
+	color: #000;
+	font-weight: bolder;
 }
 
 .results-wrapper ul {
-  text-indent: 45px;
-  list-style-type: none;
-  font-weight: bold;
-  color: #000;
+	text-indent: 45px;
+	list-style-type: none;
+	font-weight: bold;
+	color: #000;
 }
 
 .search-wrapper {
-  width: 100%;
-  background-color: #730606;
+	width: 100%;
+	background-color: #730606;
 }
 
 .search {
-  width: fit-content;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: row;
+	width: fit-content;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: row;
 }
 
 .dropdown .searchbar {
-  height: 30px;
+	height: 30px;
 }
 
 .dropdown select {
-  height: 30px;
+	height: 30px;
 }
 
-.searchbar input[type=text] { /* this class is for the search bar input*/
-  width: 1000px;
-  height: 30px;
+.searchbar input[type=text] {
+	/* this class is for the search bar input*/
+	width: 840px;
+	height: 30px;
 }
 
 /* END SEARCH PAGE STYLES */
@@ -294,8 +301,43 @@ p {
 }
 
 /* Mobile Styles */
-@media only screen and (max-width: 400px) {
-	.navbar-brand {
+@media only screen and (max-width: 425px) {
+	.initiative {
+		width: 100%;
+	}
 
+	.reminderColumn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 0px;
+		width: 60%;
+	}
+
+	.searchbar input[type=text] {
+		/* this class is for the search bar input*/
+		width: 100%;
+		height: 30px;
+	}
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 426px) and (max-width: 960px) {
+	.initiative {
+		width: 100%;
+	}
+
+	.reminderColumn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 0px;
+		width: 60%;
+	}
+
+	.searchbar input[type=text] {
+		/* this class is for the search bar input*/
+		width: 550px;
+		height: 30px;
 	}
 }
