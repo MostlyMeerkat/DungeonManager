@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
-  <title>Dungeon Manager</title>
-  <meta name="viewport" content="width=device-width"> <!-- allows flexbox to work on mobile mode -->
-  <link rel='stylesheet' href='css/styles.css'/>
+	<title>Dungeon Manager</title>
+	<!--Include bootstrap styles-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<meta name="viewport" content="width=device-width"> <!-- allows flexbox to work on mobile mode -->
+	<link rel='stylesheet' href='/css/styles.css' />
 </head>
+
 <body>
-  <div class='imageheader'><img src='images/dm-title.svg' class='dm-title'/></div>
-  <div class='imageheader mtd'><img src='images/mtd-title.svg' class='mtd-title'/></div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="/index.html">Dungeon Manager</a>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-item nav-link active" href="/index.html">Home<span class="sr-only">(current)</span></a>
+				<a class="nav-item nav-link" href="/pages/game.html">Game Tracker</a>
+				<a class="nav-item nav-link" href="/pages/search.html">Bestiary</a>
+				<a class="nav-item nav-link" href="/pages/characters.html">Character Sheets</a>
+			</div>
+		</div>
+	</nav>
 
-  <div class='content'>
-    <h1>Welcome!</h1>
-    <p>...to the solution to all your DMing needs! Whether you have far too many character sheets to keep track of,
-    or the details of your evil scheme are just too much to keep in your head, we have you covered!</p>
-  </div>
+	<div class='imageheader'><img src='images/dm-title.svg' class='dm-title' /></div>
+	<div class='imageheader mtd'><img src='images/mtd-title.svg' class='mtd-title' /></div>
 
-  <div class='content char'>
-    <h2>Characters</h2>
-    <p>Organize and view all your characters, their weapons, stats, and other equipment at a glance!</p>
-  </div>
+	<div class='content'>
+		<h1>Welcome!</h1>
+		<p>...to the solution to all your DMing needs! Whether you have far too many character sheets to keep track of,
+			or the details of your evil scheme are just too much to keep in your head, we have you covered!</p>
+	</div>
 
-  <div class='content init'>
-    <h2>Initiative</h2>
-    <p>Easily organize notes for initiative, weather, and terrain effects!</p>
-  </div>
+	<div class='content char'>
+		<h2>Characters</h2>
+		<p>Organize and view all your characters, their weapons, stats, and other equipment at a glance!</p>
+	</div>
 
-  <div class='content data'>
-    <h2>Database</h2>
-    <p>Quickly collect information for monsters, weapons, locations, and more!</p>
-  </div>
+	<div class='content init'>
+		<h2>Initiative</h2>
+		<p>Easily organize notes for initiative, weather, and terrain effects!</p>
+	</div>
+
+	<div class='content data'>
+		<h2>Database</h2>
+		<p>Quickly collect information for monsters, weapons, locations, and more!</p>
+	</div>
+
+	<!--Bootstrap JavaScript files-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+	</script>
 
 </body>
+
 </html>
