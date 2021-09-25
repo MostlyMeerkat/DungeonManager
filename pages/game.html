@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
 
+
+<head>
+	<title>Dungeon Manager</title>
+	<!--Include bootstrap styles-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<meta name="viewport" content="width=device-width"> <!-- allows flexbox to work on mobile mode -->
+	<link rel='stylesheet' href='/css/styles.css'>
+</head>
+
+
+<body class="gameBody">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="/index.html">Dungeon Manager</a>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-item nav-link" href="/index.html">Home</a>
+				<a class="nav-item nav-link active" href="/pages/game.html">Game Tracker<span
+						class="sr-only">(current)</span></a>
+				<a class="nav-item nav-link" href="/pages/search.html">Bestiary</a>
+				<a class="nav-item nav-link" href="/pages/characters.html">Character Sheets</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="headerContainer">
+		<h1 class="darkText">Game Tracker</h1>
+	</div>
+
+	<div class="gameContainer">
+		<div class=weatherContainer">
+			<div class="weather">
+				<div class="temperature">
+					<img class="weatherIcon" src="/images/partly-cloudy.png">
+					70&#176;F</div>
+				<p class="weatherDescription">Wind: 10mph NE</p>
+				<button class="button">Randomize</button>
+			</div>
+		</div>
+		<div class="initiative">
+			<div class="upNext">
+				<h2 class="darkText">Current</h2>
+				<ul class="no-bullet">
+					<li class="darkText">20 | <strong>Jade</strong> | HP: 39/39</li>
+				</ul>
+				<h2 class="darkText">Up Next</h2>
+				<ul class="no-bullet">
+					<li class="darkText initiativeOrder">19 | <strong>Goblin #1</strong> | HP: 9/9</li>
+					<li class="darkText initiativeOrder">17 | <strong>Goblin #2</strong> | HP: 1/9</li>
+					<li class="darkText initiativeOrder">15 | <strong>Dmitri</strong> | HP: 41/41</li>
+					<li class="darkText initiativeOrder">10 | <strong>Diego</strong> | HP: 36/39</li>
+					<li class="darkText initiativeOrder">9 | <strong>Goblin #3</strong> | HP: 9/9</li>
+					<li class="darkText initiativeOrder">8 | <strong>Rodenstock</strong> | HP: 52/59</li>
+					<li class="darkText initiativeOrder">6 | <strong>Tibalt</strong> | HP: 35/35</li>
+					<li class="darkText initiativeOrder">3 | <strong>Clarg</strong> | HP: 120/137</li>
+					<ul>
+			</div>
+
+		</div>
+		<div class="reminders">
+			<div class="headerContainer">
+				<h1 class="darkText">Reminders</h1>
+			</div>
+			<div class="reminderColumn">
+				<ul>
+					<li>Characters don't fail! The world is just unpredictable and dangerous.</li>
+					<li>Stealth is always an option for PCs as well as NPCs</li>
+					<li>LISTEN TO YOUR PLAYERS! DON'T ZONE OUT</li>
+					<li>Monsters/NPCs want to survive, not just mindlessly attack PCs</li>
+				</ul>
+			</div>
+			<div class="reminderColumn">
+				<ul>
+					<li>USE LEGENDARY ACTIONS AFTER A PC FINISHES THEIR TURN</li>
+					<li>Keep combat moving</li>
+					<li>Check your monsters' stat block for unique moves (or make some up in advance)</li>
+					<li>Ask questions to the players: How are you moving? How is ____ feeling?</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--Bootstrap JavaScript files-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+	</script>
+
+</body>
+
+</html>
