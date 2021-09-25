@@ -36,7 +36,7 @@ p {
 
 .button { /*generic button */
 	color: #FFF;
-	background-color: #9F6A59;    
+	background-color: #9F6A59;
 	font-weight: bold;
 	padding: 15px;
 	text-align: center;
@@ -50,7 +50,7 @@ p {
 
 .button:hover {
 	color: #FFF;
-	background-color: rgba(159, 106, 89, 0.9); 
+	background-color: rgba(159, 106, 89, 0.9);
   }
 
 .headerContainer { /*generic header container */
@@ -105,7 +105,7 @@ p {
 /*Navbar classes*/
 .navbar {
 	background-color: #730606 !important;
-	
+
 }
 
 .navbar-brand {
@@ -180,7 +180,7 @@ p {
 	flex-direction: column;
 	align-items: center;
 	height: 20%;
-	
+
 }
 
 .no-bullet {
@@ -213,7 +213,15 @@ p {
 	width: 45%;
 }
 
+.charsheet {
+	display: flex;
+	flex: flex;
+	justify-content: center;
+	align-items: space-between;
+	padding: 5%;
+}
 
+=======
 /* SEARCH PAGE STYLES */
 
 .results-wrapper {
@@ -274,8 +282,16 @@ p {
 
 /* END SEARCH PAGE STYLES */
 
+.charsheet-image {
+	max-width: 100%;
+	height: auto;
+}
 
-
+.charheading {
+	display: flex;
+	justify-content: center;
+	margin-top: 5%;
+}
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
