@@ -5,7 +5,7 @@
 }
 
 body {
-	background-color: #F29F05;
+	background-color: #FFE0A8;
 }
 
 img {
@@ -234,11 +234,14 @@ p {
   text-indent: 30px;
   text-align: left;
   color: #000;
+  font-weight: bolder;
 }
 
 .results-wrapper ul {
   text-indent: 45px;
   list-style-type: none;
+  font-weight: bold;
+  color: #000;
 }
 
 .search-wrapper {
