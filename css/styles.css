@@ -221,6 +221,67 @@ p {
 	padding: 5%;
 }
 
+=======
+/* SEARCH PAGE STYLES */
+
+.results-wrapper {
+  padding: 50px 50px 75px 75px;
+}
+
+.results-wrapper h3 {
+  text-indent: 20px;
+}
+
+.results-wrapper h1, h2, h3, h4, h5, h6 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: #730606;
+}
+
+.results-wrapper p {
+  text-indent: 30px;
+  text-align: left;
+  color: #000;
+  font-weight: bolder;
+}
+
+.results-wrapper ul {
+  text-indent: 45px;
+  list-style-type: none;
+  font-weight: bold;
+  color: #000;
+}
+
+.search-wrapper {
+  width: 100%;
+  background-color: #730606;
+}
+
+.search {
+  width: fit-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown .searchbar {
+  height: 30px;
+}
+
+.dropdown select {
+  height: 30px;
+}
+
+.searchbar input[type=text] { /* this class is for the search bar input*/
+  width: 1000px;
+  height: 30px;
+}
+
+/* END SEARCH PAGE STYLES */
+
 .charsheet-image {
 	max-width: 100%;
 	height: auto;
