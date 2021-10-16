@@ -8,9 +8,8 @@ document.getElementById('query').onkeydown = function(e){
         fetch(url)
             .then(function(response) {
                 if (response.status != 200) {
-                    return {
-                        text: 'Error calling the D&D 5e API service: ' + response.statusText
-                    }
+                    console.log('non-200 response');
+                    updateInstructions('Unrecognized query.  Please make sure you have selected the correct category and have not misspelled your query.');
                 }
             }).then(function(text) {
                 updateResult(text);
@@ -32,4 +31,9 @@ function parseQuery(query) {
 
 function updateResult(info) {
     document.getElementById('result').textContent = info;
+}
+
+function updateInstructions(info) {
+    console.log('updating instructions: ' + info);
+    document.getElementById('instructions').textContent = info;
 }
