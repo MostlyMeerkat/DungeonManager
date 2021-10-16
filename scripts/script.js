@@ -20,17 +20,34 @@ document.getElementById('query').onkeydown = function(e){
                 for (var key in json) {
                   if (json.hasOwnProperty(key)) {
 
-                    if (key === "index") {
+                    //ALL OBJECT KEYS/VALUES TO SKIP
+                    if (key === "index" || key === "url" || key === "skills" || currCategory === "ability-scores" && key === "name"
+                      || key === "ability_bonuses" || key === "size" || key === "language_options"
+                      || key === "languages") {
                       continue;
                     }
-                    if (key === "full_name" || key === "name") {
+                    //WHAT TO DO WITH SPECIFIC CONDITIONS
+                    else if (key === "full_name" || key === "name") {
                       resultStr += "<h3>" + json[key];
                       if (currCategory === "ability-scores" && key === "full_name") {
-                        resultStr += " (" + json["name"] + ")</h3>";
+                        resultStr += " (" + json["name"] + ")";
                       }
+                      resultStr += "</h3>";
                     }
-
-                    resultStr += "<p>" + json[key] + "</p>";
+                    //EVERYTHING ELSE GOES IN A STANDARD PARAGRAPH
+                    else {
+                      resultStr += "<p>";
+                      if (key === "speed") {
+                        resultStr += "Speed: ";
+                      }
+                      else if (key === "age") {
+                        resultStr += "Age: ";
+                      }
+                      else if (key === "alignment") {
+                        resultStr += "Alignment: ";
+                      }
+                      resultStr += json[key] + "</p>";
+                    }
                   }
                 }
                 updateResult(resultStr);
