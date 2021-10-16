@@ -30,7 +30,51 @@ document.getElementById('query').onkeydown = function(e){
                 }
             }).then(function(json) {
                 console.log(json);
-                let resultStr = "";
+				let resultStr = "";
+				switch(currCategory) {
+					case "ability-scores":
+						resultStr = parseAbilityScores(json);
+						break;
+					case "skills":
+						resultStr = parseSkills(json);
+						break;
+					case "proficiencies":
+						resultStr = parseProficiencies(json);
+						break;
+					case "languages":
+						resultStr = parseLanguages(json);
+						break;
+					case "alignments":
+						resultStr = parseAlignments(json);
+						break;
+					case "backgrounds":
+						resultStr = parseBackgrounds(json);
+						break;
+					case "classes":
+						resultStr = parseClasses(json);
+						break;
+					case "races":
+						resultStr = parseRace(json);
+						break;
+					case "magic-items":
+						resultStr = parseMagicItems(json);
+						break;
+					case "spells":
+						resultStr = parseSpells(json);
+						break;
+					case "feats":
+						resultStr = parseFeats(json);
+						break;
+					case "monsters":
+						resultStr = parseMonsters(json);
+						break;
+					case "conditions":
+						resultStr = parseConditions(json);
+						break;
+					case "magic-schools":
+						resultStr = parseMagicSchools(json);
+						break;
+				}
                 for (var key in json) {
                   if (json.hasOwnProperty(key)) {
 
@@ -96,4 +140,61 @@ function updateResult(info) {
 function updateInstructions(info) {
     console.log('updating instructions: ' + info);
     document.getElementById('instructions').textContent = info;
+}
+
+function parseAbilityScores(json) {
+	console.log("parsing ability scores");
+}
+
+function parseSkills(json) {
+
+}
+
+function parseLanguages(json) {
+
+}
+
+function parseAlignments(json) {
+
+}
+
+function parseBackgrounds(json) {
+
+}
+
+function parseClasses(json) {
+
+}
+
+function parseRace(json) {
+
+}
+
+function parseEquipment(json) {
+
+}
+
+function parseMagicItems(json) {
+
+}
+
+function parseSpells(json) {
+
+}
+
+
+function parseFeats(json) {
+
+}
+
+function parseMonsters(json) {
+
+}
+
+function parseConditions(json) {
+
+}
+
+function parseMagicSchools(json) {
+
 }
