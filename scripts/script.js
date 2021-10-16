@@ -11,11 +11,40 @@ document.getElementById('query').onkeydown = function(e){
                     console.log('non-200 response');
                     updateInstructions('Unrecognized query.  Please make sure you have selected the correct category and have not misspelled your query.');
                 }
-            }).then(function(text) {
-                updateResult(text);
+                else {
+                  return response.json();
+                }
+            }).then(function(json) {
+                console.log(json);
+                let resultStr = "";
+                for (var key in json) {
+                  if (json.hasOwnProperty(key)) {
+
+                    if (key === "index") {
+                      continue;
+                    }
+                    if (key === "full_name" || key === "name") {
+                      resultStr += "<h3>" + json[key];
+                      if (currCategory === "ability-scores" && key === "full_name") {
+                        resultStr += " (" + json["name"] + ")</h3>";
+                      }
+                    }
+
+                    resultStr += "<p>" + json[key] + "</p>";
+                  }
+                }
+                updateResult(resultStr);
             });
     }
 };
+
+function parseArray(array) {
+  let string = "";
+  for (let i = 0; i < array.length; i++) {
+    string += array[i] + "<br/>";
+  }
+  return string;
+}
 
 function parseQuery(query) {
     queryParts = query.split(' ');
@@ -30,7 +59,7 @@ function parseQuery(query) {
 }
 
 function updateResult(info) {
-    document.getElementById('result').textContent = info;
+    document.getElementById('result').innerHTML = info;
 }
 
 function updateInstructions(info) {
