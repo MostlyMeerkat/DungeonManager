@@ -75,39 +75,7 @@ document.getElementById('query').onkeydown = function(e){
 						resultStr = parseMagicSchools(json);
 						break;
 				}
-                for (var key in json) {
-                  if (json.hasOwnProperty(key)) {
-
-                    //ALL OBJECT KEYS/VALUES TO SKIP
-                    if (key === "index" || key === "url" || key === "skills" || currCategory === "ability-scores" && key === "name"
-                      || key === "ability_bonuses" || key === "size" || key === "language_options"
-                      || key === "languages" || key === "ability_score") {
-                      continue;
-                    }
-                    //WHAT TO DO WITH SPECIFIC CONDITIONS
-                    else if (key === "full_name" || key === "name") {
-                      resultStr += "<h3>" + json[key];
-                      if (currCategory === "ability-scores" && key === "full_name") {
-                        resultStr += " (" + json["name"] + ")";
-                      }
-                      resultStr += "</h3>";
-                    }
-                    //EVERYTHING ELSE GOES IN A STANDARD PARAGRAPH
-                    else {
-                      resultStr += "<p>";
-                      if (key === "speed") {
-                        resultStr += "Speed: ";
-                      }
-                      else if (key === "age") {
-                        resultStr += "Age: ";
-                      }
-                      else if (key === "alignment") {
-                        resultStr += "Alignment: ";
-                      }
-                      resultStr += json[key] + "</p>";
-                    }
-                  }
-                }
+                
                 updateResult(resultStr);
             });
         }
@@ -167,24 +135,101 @@ function parseClasses(json) {
 }
 
 function parseRace(json) {
-
+	let str = "";
+	str += "<h3>" + json["name"] + "</h3>";
+	str += "<ul>Ability Bonuses:"
+	for (var i in json["ability_bonuses"]) {
+		str+="<li>" + json["ability_bonuses"][i].ability_score.name + " + " + json["ability_bonuses"][i].bonus;
+	}
+	str += "</ul>";
+	str += "<p>Size: " + json["size"] + "</p>";
+	str += "<p> Movement Speed: " + json["speed"] + "</p>";
+	str += "<p> Alignment: " + json["alignment"] + "</p>";
+	str += "<p>" + json["size_description"] + "</p>";
+	if (json["starting_proficiencies"].length > 0) {
+		str += "<ul>Starting Proficiencies:";
+		for (var i in json["starting_proficiencies"]) {
+			str += "<li>" + json["starting_proficiencies"][i].name + "</li>";
+		}
+		str += "</ul>";
+	}
+	if (json["subraces"].length > 0) {
+		str += "<ul>Subraces:";
+		for (var i in json["subraces"]) {
+			str += "<li>" + json["subraces"][i].name + "</li>";
+		}
+		str += "</ul>";
+	}
+	if (json["traits"].length > 0) {
+		str += "<ul>Traits:";
+		for (var i in json["traits"]) {
+			str += "<li>" + json["traits"][i].name + "</li>";
+		}
+		str += "</ul>";
+	}
+	  return str;
 }
 
-function parseEquipment(json) {
-
-}
 
 function parseMagicItems(json) {
+	let str = "";
+	str += "<h3>" + json["name"] + "</h3>";
 
+	for (var i in json["desc"]) {
+		str += "<p>" + json["desc"][i] + "</p>";
+	}
+	return str;
 }
 
 function parseSpells(json) {
+	let str = "";
+	str += "<h3>" + json["name"] + "</h3>";
+	str += "<p>Level " + json["level"] + " " + json["school"].name + "</p>"
+	str += "<p>";
+	for (var i in json["components"]) {
+		str += json["components"][i];
+		if (i < json["components"].length - 1) {
+			str += ", ";
+		}
+	}
+	if (json.hasOwnProperty("material")) {
+		str += "*";
+	}
+	str += "</p>";
+	if (json["concentration"]) {
+		str += "<p>Requires Concentration</p>";
+	}
+	if (json["ritual"]) {
+		str += "<p>Ritual</p>";
+	}
+	str += "<p>Duration: " + json["duration"] + "</p>";
 
-}
+	str += "<p>Casting time: " + json["casting_time"] + "</p>";
+	
+	str += "<p>Range: " + json["range"] + "</p>";
+	if (json.hasOwnProperty("damage")) {
+		str += "<p> Damage: " + json["damage"]["damage_at_slot_level"][json["level"]] + "</p>";
+	}
+
+	str += "<p>" + json["desc"] + "</p>";
+	if (json.hasOwnProperty("higher_level")) {
+		str += "<p>" + json["higher_level"] + "</p>";
+	}
+
+	str += "<p>Classes: ";
+	for (var i in json["classes"]) {
+		str += json["classes"][i].name;
+		if (i < json["classes"].length - 1) {
+			str += ", ";
+		}
+	}
+
+	if (json.hasOwnProperty("material")) {
+		str += "<p><em>* " + json["material"] + "</p>";
+	}
 
 
-function parseFeats(json) {
-
+	return str;
 }
 
 function parseMonsters(json) {
@@ -192,7 +237,13 @@ function parseMonsters(json) {
 }
 
 function parseConditions(json) {
+	let str = "";
+	str += "<h3>" + json["name"] + "</h3>";
 
+	for (var i in json["desc"]) {
+		str += "<p>" + json["desc"][i] + "</p>";
+	}
+	return str;
 }
 
 function parseMagicSchools(json) {
