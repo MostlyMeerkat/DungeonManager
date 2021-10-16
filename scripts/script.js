@@ -5,6 +5,20 @@ document.getElementById('query').onkeydown = function(e){
         let category = document.getElementById('category');
         let currCategory = category.options[category.selectedIndex].value;
         let url = 'https://www.dnd5eapi.co/api/' + currCategory + '/' + query;
+        // let url-cat = 'https://www.dnd5eapi.co/api/' + currCategory;
+        // fetch(url-cat) {
+        //   .then(function(response) {
+        //     if (response.status != 200) {
+        //         console.log('non-200 response');
+        //     }
+        //     else {
+        //       return response.json();
+        //     }
+        //   })
+        //   .then(function(json) {
+        //     console.log(json);
+        //   });
+        // }
         fetch(url)
             .then(function(response) {
                 if (response.status != 200) {
@@ -23,7 +37,7 @@ document.getElementById('query').onkeydown = function(e){
                     //ALL OBJECT KEYS/VALUES TO SKIP
                     if (key === "index" || key === "url" || key === "skills" || currCategory === "ability-scores" && key === "name"
                       || key === "ability_bonuses" || key === "size" || key === "language_options"
-                      || key === "languages") {
+                      || key === "languages" || key === "ability_score") {
                       continue;
                     }
                     //WHAT TO DO WITH SPECIFIC CONDITIONS
@@ -52,7 +66,7 @@ document.getElementById('query').onkeydown = function(e){
                 }
                 updateResult(resultStr);
             });
-    }
+        }
 };
 
 function parseArray(array) {
