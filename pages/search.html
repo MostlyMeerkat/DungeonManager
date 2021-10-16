@@ -32,7 +32,7 @@
 		<div class="search">
 			<div class="dropdown">
 				<form>
-					<select name="Category">
+					<select name="Category" id="category">
 						<option value="ability-scores">Ability Scores</option>
 						<option value="skills">Skills</option>
 						<option value="proficiencies">Proficiencies</option>
@@ -63,13 +63,15 @@
 				</form>
 			</div>
 			<div class="searchbar">
-				<input type="text" placeholder="Search Here!">
+				<input type="text" placeholder="Search Here!" id="query">
 			</div>
 		</div>
 	</div>
 
-	<div class="results-wrapper">
-		<div class="results">
+	<div class="results-wrapper" id='result'>
+		<p>To use this bestiary, please select the correct category, type in the desired query, and press 'Enter'.  It is not case sensitive, but please type in the exact name of what you are searching for as this is not a true search engine, merely an online index.</p>
+
+		<!-- <div class="results">
 			<h2>Barbarian</h2>
 
 			<h3>Proficiencies</h3>
@@ -112,7 +114,7 @@
 				<li>Berserker</li>
 			</ul>
 
-		</div>
+		</div> -->
 	</div>
 
 
@@ -121,6 +123,8 @@
 		<p>TJ Maxwell, Olivia Wynn, and Carter Wonnacott</p>
     </div>
 
+
+	<script text='type/javascript' src="../scripts/script.js"></script>
 	<!--Bootstrap JavaScript files-->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
