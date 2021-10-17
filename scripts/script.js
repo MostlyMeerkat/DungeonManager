@@ -212,39 +212,49 @@ function parseBackgrounds(json) {
   str += "</ol>";
   return str;
 }
-//
-function parseClasses(json) {
+// //
+// function parseClasses(json) {
 
-}
+// }
 
 function parseRace(json) {
 	let str = "";
 	str += "<h3>" + json["name"] + "</h3>";
-	str += "<ul>Ability Bonuses:"
+	str += "<h5>Ability Bonuses: </h5><ul>"
 	for (var i in json["ability_bonuses"]) {
 		str+="<li>" + json["ability_bonuses"][i].ability_score.name + " + " + json["ability_bonuses"][i].bonus;
 	}
 	str += "</ul>";
-	str += "<p>Size: " + json["size"] + "</p>";
-	str += "<p> Movement Speed: " + json["speed"] + "</p>";
-	str += "<p> Alignment: " + json["alignment"] + "</p>";
+	str += "<h5>Size: </h5><p>" + json["size"] + "</p>";
 	str += "<p>" + json["size_description"] + "</p>";
+	str += "<h5>Movement Speed: </h5><p>" + json["speed"] + " feet</p>";
+	str += "<h5>Alignment: </h5><p> " + json["alignment"] + "</p>";
+	
+
+
+// 	str += "<h4>You start with the following equipment:</h4>"
+//   str += "<ol>";
+//   for (let i = 0; i < json.starting_equipment.length; i++) {
+//     str += "<li>" + json.starting_equipment[i].equipment.name + "</li>";
+//   }
+//   str += "</ol>";
+	
 	if (json["starting_proficiencies"].length > 0) {
-		str += "<ul>Starting Proficiencies:";
+		str += "<h5>Starting proficiencies: </h5><ul>";
 		for (var i in json["starting_proficiencies"]) {
 			str += "<li>" + json["starting_proficiencies"][i].name + "</li>";
 		}
 		str += "</ul>";
 	}
 	if (json["subraces"].length > 0) {
-		str += "<ul>Subraces:";
+		str += "<h5>Subraces: </h5><ul>";
 		for (var i in json["subraces"]) {
 			str += "<li>" + json["subraces"][i].name + "</li>";
 		}
 		str += "</ul>";
 	}
 	if (json["traits"].length > 0) {
-		str += "<ul>Traits:";
+		str += "<h5>Traits: </h5><ul>";
 		for (var i in json["traits"]) {
 			str += "<li>" + json["traits"][i].name + "</li>";
 		}
