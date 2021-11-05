@@ -1,0 +1,410 @@
+<template>
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="">Dungeon Manager</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <router-link to="/">
+            <p class="nav-item nav-link active">Home</p>
+          </router-link>
+          <router-link to="/game">
+            <p class="nav-item nav-link">Game Tracker</p>
+          </router-link>
+          <router-link to="/search">
+            <p class="nav-item nav-link">Search</p>
+          </router-link>
+          <router-link to="/characters">
+            <p class="nav-item nav-link">Character Sheets</p>
+          </router-link>
+        </div>
+      </div>
+    </nav>
+    <router-view/>
+    <div class="footer">
+      <a href="https://github.com/MostlyMeerkat/DungeonManager">Github</a>
+      <p>TJ Maxwell, Olivia Wynn, and Carter Wonnacott</p>
+    </div>
+  </div>
+</template>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+/* dungeon-manager styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #FFE0A8;
+}
+
+img {
+	/* border: 1px blue solid; */
+	margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 auto;
+	margin-bottom: 10px;
+	color: #F2B705;
+}
+
+.darkText {
+	color: #730606;
+}
+
+p {
+	text-align: center;
+	color: #fff;
+}
+
+.button {
+	/*generic button */
+	color: #FFF;
+	background-color: #9F6A59;
+	font-weight: bold;
+	padding: 15px;
+	text-align: center;
+	border-radius: 5px;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	width: 50%;
+	margin: 10px;
+}
+
+.button:hover {
+	color: #FFF;
+	background-color: rgba(159, 106, 89, 0.9);
+}
+
+.headerContainer {
+	/*generic header container */
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	align-items: center;
+	padding-top: 2.5%
+}
+
+
+.imageheader {
+	/* this class is for the two title images on the home page */
+	/* border: 1px red solid; */
+	display: flex;
+	flex: flex;
+	justify-content: stretch
+}
+
+.mtd {
+	/* this class is for the two title images on the home page */
+	background-color: #730606;
+}
+
+.dm-title {
+	/* this class is for the DungeonManager title image */
+	max-width: 50%;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2%;
+}
+
+.mtd-title {
+	/* this class is for the Master the Dungeon title image */
+	max-width: 80%;
+	margin: 0 auto;
+	padding-top: 5%;
+	padding-bottom: 5%
+}
+
+.content {
+	/* this class is for the content boxes on the home page */
+	display: flex;
+	flex-direction: column;
+	background-color: #A60808;
+	padding: 5%;
+	margin: 10%;
+}
+
+
+/*Navbar classes*/
+.navbar {
+	background-color: #730606 !important;
+
+}
+
+.navbar-brand {
+	position: absolute;
+	left: 45%;
+}
+
+
+
+
+
+
+/*Game classes*/
+.gameBody {
+	background-color: #FFE0A8;
+}
+
+.gameContainer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.weatherContainer {
+	display: flex;
+	justify-content: flex-start;
+	width: 10%;
+}
+
+.weather {
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 20%;
+	/* width: 100; */
+	border: 2px solid white;
+}
+
+.temperature {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10%;
+}
+
+.weatherIcon {
+	width: 20%;
+	margin: 5px;
+}
+
+.weatherDescription {
+	color: #000;
+}
+
+.initiative {
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 50%;
+	width: 50%;
+	border: 2px solid white;
+}
+
+.upNext {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 20%;
+
+}
+
+.no-bullet {
+	list-style-type: none;
+	text-align: center;
+}
+
+.initiativeOrder {
+	margin: 5px;
+}
+
+
+.reminders {
+	display: flex;
+	width: 100%;
+	margin: 20px;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid white;
+	flex-wrap: wrap;
+}
+
+
+.reminderColumn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+	width: 45%;
+}
+
+.charsheet {
+	display: flex;
+	flex: flex;
+	justify-content: center;
+	align-items: space-between;
+	padding: 5%;
+}
+
+
+/* SEARCH PAGE STYLES */
+
+.results-wrapper {
+	padding: 50px 50px 75px 75px;
+}
+
+.results-wrapper h3 {
+	text-indent: 20px;
+}
+
+.results-wrapper h1,
+.results-wrapper h2,
+.results-wrapper h3,
+.results-wrapper h4,
+.results-wrapper h5,
+.results-wrapper h6 {
+	margin: 0 auto;
+	margin-bottom: 10px;
+	color: #730606;
+}
+
+.results-wrapper p {
+	text-indent: 30px;
+	text-align: left;
+	color: #000;
+	font-weight: bolder;
+}
+
+.results-wrapper ul {
+	text-indent: 45px;
+	list-style-type: none;
+	font-weight: bold;
+	color: #000;
+}
+
+.search-wrapper {
+	width: 100%;
+	background-color: #730606;
+}
+
+.search {
+	width: fit-content;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: row;
+}
+
+.dropdown .searchbar {
+	height: 30px;
+}
+
+.dropdown select {
+	height: 30px;
+}
+
+.searchbar input[type=text] {
+	/* this class is for the search bar input*/
+	width: 840px;
+	height: 30px;
+}
+
+/* END SEARCH PAGE STYLES */
+
+.charsheet-image {
+	max-width: 100%;
+	height: auto;
+}
+
+.charheading {
+	display: flex;
+	justify-content: center;
+	margin-top: 5%;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 425px) {
+	.initiative {
+		width: 100%;
+	}
+
+	.reminderColumn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 0px;
+		width: 60%;
+	}
+
+	.searchbar input[type=text] {
+		/* this class is for the search bar input*/
+		width: 100%;
+		height: 30px;
+	}
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 426px) and (max-width: 960px) {
+	.initiative {
+		width: 100%;
+	}
+
+	.reminderColumn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 0px;
+		width: 60%;
+	}
+
+	.searchbar input[type=text] {
+		/* this class is for the search bar input*/
+		width: 550px;
+		height: 30px;
+	}
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #730606;
+  color: white;
+  border-top: 1px solid white;
+  text-align: center;
+}
+</style>
