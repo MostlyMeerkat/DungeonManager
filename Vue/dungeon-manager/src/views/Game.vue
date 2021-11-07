@@ -5,15 +5,7 @@
     </div>
 
     <div class="gameContainer">
-      <div class= "weatherContainer">
-        <div class="weather">
-          <div class="temperature">
-            <img class="weatherIcon" src="/images/partly-cloudy.png">
-            70&#176;F</div>
-          <p class="weatherDescription">Wind: 10mph NE</p>
-          <button class="button">Randomize</button>
-        </div>
-      </div>
+      <Weather/>
       <div class="initiative">
         <div class="upNext">
           <h2 class="darkText">Current</h2>
@@ -31,13 +23,13 @@
             </li>
           </ul>
           <form v-on:submit.prevent="next">
-            <button type="submit">Next</button>
+            <button class="nextButton" type="submit">Next</button>
           </form>
 
           <form v-on:submit.prevent="addItem">
-            <input type="text" v-model="name" placeholder="name">
-            <input type="text" v-model="initiative" placeholder="initiative">
-            <button type="submit">Add</button>
+            <input type="text" class="searchbar" v-model="name" placeholder="name">
+            <input type="text" class="searchbar" v-model="initiative" placeholder="initiative">
+            <button class="addButton" type="submit">Add</button>
           </form>
 
         </div>
@@ -69,8 +61,13 @@
 </template>
 
 <script>
+
+import Weather from '../components/Weather.vue'
 export default {
   name: 'Game',
+  components: {
+	Weather
+  },
   data: function() {
     return {
       combatants: [],

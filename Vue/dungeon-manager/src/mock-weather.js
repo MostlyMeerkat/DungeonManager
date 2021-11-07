@@ -1,7 +1,7 @@
 let mock = [{
 		id: 1,
 		title: "Sunny",
-		image: 'sunny.jpg'
+		image: 'sunny.png'
 	},
 	{
 		id: 2,
@@ -10,22 +10,24 @@ let mock = [{
 	},
 	{
 		id: 3,
-		title: "rainy",
-		image: 'rainy.____'
+		title: "Rainy",
+		image: 'rainy.png'
 	},
 	{
 		id: 4,
 		title: "Snowy",
-		image: 'snowy._____'
+		image: 'snowy.png'
 	},
 	{
 		id: 5,
 		title: "Thunderstorms",
-		image: 'thunderstorms._____'
+		image: 'thunderstorm.png'
 	},
 	{
 		id: 6,
 		title: "Fog",
-		image: 'fog._____'
+		image: 'fog.png'
 	}
 ]
+
+export default mock;
