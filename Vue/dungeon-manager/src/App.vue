@@ -200,6 +200,7 @@ p {
 	flex-direction: column;
 	align-items: center;
 	height: 20%;
+	width: 30%;
 	/* width: 100; */
 	border: 2px solid white;
 }
@@ -212,7 +213,7 @@ p {
 }
 
 .weatherIcon {
-	width: 20%;
+	width: 50px;
 	margin: 5px;
 }
 
@@ -243,10 +244,12 @@ p {
 .no-bullet {
 	list-style-type: none;
 	text-align: center;
+	width: 80%;
 }
 
 .initiativeOrder {
 	margin: 5px;
+	width: 80%;
 }
 
 
@@ -275,6 +278,66 @@ p {
 	justify-content: center;
 	align-items: space-between;
 	padding: 5%;
+}
+
+.addButton {
+	/*generic button */
+	color: #FFF;
+	background-color: #9F6A59;
+	font-weight: bold;
+	padding: 5px;
+	text-align: center;
+	border-radius: 5px;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	width: 10%;
+	margin: 10px;
+}
+
+.addButton:hover {
+	color: #FFF;
+	background-color: rgba(159, 106, 89, 0.9);
+}
+
+.nextButton {
+	/*generic button */
+	color: #FFF;
+	background-color: #9F6A59;
+	font-weight: bold;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	width: 100%;
+	margin: 10px;
+}
+
+.nextButton:hover {
+	color: #FFF;
+	background-color: rgba(159, 106, 89, 0.9);
+}
+
+.delete {
+	/*generic button */
+	color: #FFF;
+	background-color: #9F6A59;
+	font-weight: bold;
+	padding: 5px, 0px;
+	text-align: center;
+	border-radius: 5px;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	width: 10%;
+	float: right;
+}
+
+.delete:hover {
+	color: #FFF;
+	background-color: rgba(159, 106, 89, 0.9);
 }
 
 
@@ -361,6 +424,15 @@ p {
 		width: 100%;
 	}
 
+	.weather {
+		width: 100%;
+	}
+
+	.addButton {
+		padding: 0px;
+		width: 15%;
+	}
+
 	.reminderColumn {
 		display: flex;
 		justify-content: center;
@@ -379,6 +451,10 @@ p {
 /* Tablet Styles */
 @media only screen and (min-width: 426px) and (max-width: 960px) {
 	.initiative {
+		width: 100%;
+	}
+
+	.weather {
 		width: 100%;
 	}
 
