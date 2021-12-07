@@ -52,12 +52,15 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
 /* dungeon-manager styles */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 body {
